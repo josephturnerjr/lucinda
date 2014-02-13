@@ -25,6 +25,18 @@ server. CRUD for any REST endpoint!
     r = requests.get("http://0.0.0.0:5000/apple/%s" % query).json()
     print r
 
+Prints:
+
+    {u'status': 200, u'message': u'OK.'}
+    [{u'test': 1, u'_id': {u'$oid': u'52fc581344ac617b7962fd26'}}]
+    {u'status': 200, u'message': u'OK.', u'data': {u'test': 1, u'_id':
+    {u'$oid': u'52fc581344ac617b7962fd26'}}}
+    {u'status': 200, u'message': u'OK.'}
+    {u'status': 200, u'message': u'OK.', u'data': {u'_id': {u'$oid': u'52fc581344ac617b7962fd26'}, u'moar': 2}}
+    {u'status': 200, u'message': u'OK.'}
+    {u'status': 404, u'message': u'No such apple'}
+
+
 Of course, it doesn't have to be apple. It can be anything! I'm not
 entirely sure I see a value in this yet (categorical data collection?
 testing out frontend ideas?), but I thought it seemed cool.
