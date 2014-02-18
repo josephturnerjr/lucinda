@@ -28,7 +28,6 @@ def json_response(status=200, message="OK.", data=None):
 
 @app.route('/<string:collection_name>', methods=['GET', 'POST'])
 def collection(collection_name):
-    print "here"
     if request.method == "GET":
         return json_response(data=[d for d in getattr(mongo.db, collection_name).find()])
     else:
